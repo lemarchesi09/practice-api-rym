@@ -6,10 +6,12 @@
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-image: linear-gradient(to right,#62236c 0%, #6565bf 50%, #3878af 100%);
 }
 .container{
+    margin: 2%;
     display:grid;
     grid-template-columns:33% 33% 33%;
     gap: 2%;

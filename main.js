@@ -2,10 +2,16 @@ const URL_API = 'https://rickandmortyapi.com/api/character'
 
 const container = document.querySelector('.container')
 
+const select = document.querySelector('#selector')
 
-fetch(URL_API)
+
+const showCharacter = () =>{
+    fetch(URL_API)
     .then((response) => response.json())
     .then((data) => showData(data.results))
+}
+showCharacter();
+
 
 const showData = (array) =>{
     let card = ``
@@ -25,5 +31,28 @@ const showData = (array) =>{
             </div>
         `
     }
+    
+
     container.innerHTML = card
 }
+
+const showSelected = (array) => {
+    array.filter(e => e.gender === 'Male' )
+}
+select.addEventListener('change', ()=>{
+    switch (select.selectedIndex) {
+        case 1:
+            
+            console.log('Male');
+            break;
+        case 2:
+            console.log('Female');
+            break;
+        case 3:
+            console.log('Unknown');
+            break;
+    
+        default:
+            break;
+    }
+})
