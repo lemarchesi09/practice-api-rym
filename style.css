@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right,#62236c 0%, #6565bf 50%, #3878af 100%);
+}
+.container{
+    display:grid;
+    grid-template-columns:33% 33% 33%;
+    gap: 2%;
+    
+}
+.tarjeta{
+    border: 1px solid black;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #fdfdfd77;
+}
+
+.tarjeta h2{
+    font-size: 2rem;
+}
+.tarjeta img{
+    height: auto;
+    width: 300px;
+    border-radius: 25px;
+    align-self: center;
+}
+
+.tarjeta p{
+    padding: 1% 0;
+    font-size: 1.5rem;
+}
+
+.tarjeta:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
