@@ -1,6 +1,8 @@
 const URL_API = 'https://rickandmortyapi.com/api/character'
-const container = document.querySelector('.container')
+const container = document.querySelector('.contenedor')
+const body = document.querySelector('body')
 const select = document.querySelector('#selector')
+const btnDetails = document.querySelector('#buttonDetails')
 
 //      ------GENERAL--------
 const showCharacter = () =>{
@@ -15,18 +17,20 @@ const showData = (array) =>{
     let card = ``
     for (const element of array) {
         // console.log(element);
-        const {name, image, gender, species, status} = element
+        const {name, image, gender, species, status, id} = element
         
         card += `
+        <div class="col-md-6 col-xl-4">
             <div class="tarjeta">
                 <h2>${name}</h2>
-                <img src="${image}">
+                <img class="img-fluid" src="${image}">
                 <p><b>Gender:</b> ${gender}</p>
                 <p><b>Species:</b> ${species}</p>
                 <p><b>Status:</b> ${status}</p>
                 <p><b>Location:</b> ${element.location.name}</p>
-            
+                <button onclick="callDetails(${id})" type="button" class="btn btn-primary boton">Details</button>
             </div>
+        </div>
         `
     }
     
@@ -77,21 +81,59 @@ const mostrarGenero = (array) =>{
     let card = ``
     for (const element of array) {
         console.log(element);
-        const {name, image, gender, species, status} = element
+        const {name, image, gender, species, status, id} = element
         
         card += `
+        <div class="col-md-6 col-xl-4">
             <div class="tarjeta">
                 <h2>${name}</h2>
-                <img src="${image}">
+                <img class="img-fluid" src="${image}">
                 <p><b>Gender:</b> ${gender}</p>
                 <p><b>Species:</b> ${species}</p>
                 <p><b>Status:</b> ${status}</p>
                 <p><b>Location:</b> ${element.location.name}</p>
-            
+                <button onclick="callDetails(${id})" type="button" class="btn btn-primary boton">Details</button>
             </div>
+        </div>
         `
     }
     
 
     container.innerHTML = card
 }
+
+//          MOSTRAR DETALLES
+const callDetails = (id) =>{
+    fetch(`${URL_API}/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+        showCard(data)
+        console.log(data);
+    })
+}
+
+const showCard = (info)=>{
+    let card = ``
+    const {name, image, gender, species, status, origin, location, created} = info
+    card = `
+        <div class="col-12">
+            <div class="detalles">
+                <img class="img-fluid col-sm-6" src="${image}">
+                <div class=" cont-detalles col-sm-6">
+                    <h2><b>Name:</b> ${name}</h2>
+                    <p><b>Gender:</b> ${gender}</p>
+                    <p><b>Species:</b> ${species}</p>
+                    <p><b>Status:</b> ${status}</p>
+                    <p><b>Origin:</b> ${origin.name}</p>
+                    <p><b>Location:</b> ${location.name}</p>
+                    <p><b>Created:</b> ${created}</p>
+
+                </div>
+            </div>
+            <button onclick="showCharacter()" type="button" class="btn btn-primary boton col-4 ">Go Back</button>
+        </div>
+    `
+    container.innerHTML = card
+}
+
+

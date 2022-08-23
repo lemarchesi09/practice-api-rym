@@ -10,21 +10,23 @@ body{
     justify-content: center;
     background-image: linear-gradient(to right,#62236c 0%, #6565bf 50%, #3878af 100%);
 }
-.container{
-    margin: 2%;
+.contenedor{
+    /* margin: 2%;
     display:grid;
     grid-template-columns:33% 33% 33%;
-    gap: 2%;
-    
+    gap: 2%; */
+    padding-top: 3%;
+    display: flex;
 }
 .tarjeta{
     border: 1px solid black;
-    width: 80%;
     display: flex;
     flex-direction: column;
     text-align: center;
     border-radius: 25px;
     background-color: #fdfdfd77;
+    margin-top: 5%;
+    
 }
 
 .tarjeta h2{
@@ -43,7 +45,7 @@ body{
 }
 
 .tarjeta:hover{
-    transform: scale(1.1);
+    transform: scale(1.03);
     transition: all 0.3s ease-in-out;
 }
 .green{
@@ -51,4 +53,43 @@ body{
 }
 .red{
     background-color: red;
+}
+
+.boton{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 2%;
+}
+.detalles{
+    display: flex;
+    background-color: #fcfafa62;
+    border: 2px solid green;
+    border-radius: 25px;
+    padding: 3%;
+}
+
+.detalles img{
+    height: auto;
+    border-radius: 25px;
+}
+.cont-detalles{
+    padding-left: 10%;
+}
+
+.cont-detalles b{
+    font-size: 2rem;
+}
+.cont-detalles h2{
+    font-size: 1.5rem;
+    border-bottom: 2px solid greenyellow;
+}
+.cont-detalles p{
+    font-size: 1.5rem;
+    border-bottom: 2px solid greenyellow;
+}
+
+#selector{
+    margin-top: 2%;
+    
+    
 }
