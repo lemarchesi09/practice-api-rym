@@ -116,10 +116,10 @@ const showCard = (info)=>{
     let card = ``
     const {name, image, gender, species, status, origin, location, created} = info
     card = `
-        <div class="col-12">
-            <div class="detalles">
-                <img class="img-fluid col-sm-6" src="${image}">
-                <div class=" cont-detalles col-sm-6">
+        <div class="">
+            <div class="detalles row">
+                <img class="img-fluid col-lg-6" src="${image}">
+                <div class=" cont-detalles col-lg-6 pt-lg-0 pt-sm-4">
                     <h2><b>Name:</b> ${name}</h2>
                     <p><b>Gender:</b> ${gender}</p>
                     <p><b>Species:</b> ${species}</p>
@@ -130,7 +130,7 @@ const showCard = (info)=>{
 
                 </div>
             </div>
-            <button onclick="showCharacter()" type="button" class="btn btn-primary boton col-4 ">Go Back</button>
+            <button onclick="showCharacter()" type="button" class="btn btn-primary boton col-4">Go Back</button>
         </div>
     `
     container.innerHTML = card
