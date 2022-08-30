@@ -25,9 +25,7 @@ const showData = (array) =>{
                 <h2>${name}</h2>
                 <img class="img-fluid" src="${image}">
                 <p><b>Gender:</b> ${gender}</p>
-                <p><b>Species:</b> ${species}</p>
                 <p><b>Status:</b> ${status}</p>
-                <p><b>Location:</b> ${element.location.name}</p>
                 <button onclick="callDetails(${id})" type="button" class="btn btn-primary boton">Details</button>
             </div>
         </div>
