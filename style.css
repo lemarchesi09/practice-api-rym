@@ -48,13 +48,23 @@ body{
     transform: scale(1.03);
     transition: all 0.3s ease-in-out;
 }
-.green{
-    background-color: green;
+.Alive{
+    background-color: rgb(52, 146, 52);
 }
-.red{
+.Dead{
+    background-color: rgb(197, 76, 76);
+}
+.unknown{
+    background-color: rgb(143, 143, 143);
+}
+.genero{
+    width: 48%;
+    align-self: center;
+    border-radius: 8px;
+}
+.circulo{
     background-color: red;
 }
-
 .boton{
     width: 50%;
     margin: auto;
