@@ -5,8 +5,10 @@ const select = document.querySelector('#selector')
 const btnDetails = document.querySelector('#buttonDetails')
 
 //      ------GENERAL--------
+// Get Random page for landing page
 const showCharacter = () =>{
-    fetch(URL_API)
+    const page = Math.floor(Math.random()*43)
+    fetch(`${URL_API}/?page=${page.toString()}`)
     .then((response) => response.json())
     .then((data) => showData(data.results))
 }
