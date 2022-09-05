@@ -1,3 +1,10 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+@font-face {
+    font-family: rymfont;
+    src: url(./assets/Rick-and-Morty-Font/get_schwifty.ttf);
+}
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -17,6 +24,17 @@ body{
     gap: 2%; */
     padding-top: 3%;
     display: flex;
+}
+.search-cont{
+    display: flex;
+}
+
+h1{
+    font-family: rymfont;
+    margin: auto;
+    color: #12b0c8;
+    text-shadow: 1px 1px 2px #89a944;
+    font-size: 4rem !important;
 }
 .tarjeta{
     border: 1px solid black;
